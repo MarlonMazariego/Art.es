@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&family=Pacifico&display=swap');
+.lobster{
+    font-family: 'Lobster Two', cursive;
+    font-size: 20px; 
+    color: #ffffff;
+}
+
+.bordB{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:  10px;  
+}
+
+.titulo{
+    font-family: 'Lobster', cursive; 
+    color: #b71c1c
+}
+
+.titulo:hover{
+    transform: scale(1.1);
+    color: #FF3366;
+}
+
+.seleccionado{
+    font-size: 25px; 
+    color: #FF3366 !important;
+}
+.seleccionado:hover{
+    color: #A11538 !important;
+}
+
+.galeria{
+    width: 100%;
+    height: 100%;
+}
+
+.galeria img{
+    
+    box-shadow: 0 8px 10 px -4px rgba(0,0,0,.6);
+    border-radius: 15px;
+}
+
+.galeria a > img { 
+    object-fit:  cover;
+    transition: 0.5s;
+}
+
+.inicio{ 
+    object-fit:  cover;
+    transition: 0.5s;
+}
+
+
+
+
+
+@media only screen and (min-width : 700px){
+    .galeria a > img:hover {
+   transform: scale(1.1) rotate(2deg);
+ }
+ 
+ .inicio:hover{     
+    transform: scale(1.05) rotate(0.5deg);
+}
+}
+
+
