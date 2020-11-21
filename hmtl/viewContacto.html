@@ -65,18 +65,18 @@
                 </div>
             </div>
             <hr class="d-none d-sm-none d-md-block">
-            <form>
+            <form id="frmContacto">
             <div class="form-row ">
                 <div class=" form-group col-sm-12 col-md-4 col-lg-6">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" required="">
+                    <input type="text" class="form-control" placeholder="Nombre" id="txtName">
                     <div class="invalid-feedback">
                         Favor ingresar un nombre
                     </div>
                 </div>
                 <div class=" form-group col-sm-12 col-md-4 col-lg-6">
                     <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required="">
+                    <input type="email" class="form-control" placeholder="Email" id="txtEmail">
                     <div class="invalid-feedback">
                         Ingresar un correo para poder contactarnos
                     </div>
@@ -87,10 +87,12 @@
                 </div>
                 <div class=" form-group col-sm-12 col-md-4 col-lg-6">
                     <label for="Cment">¿Como podemos ayudarte?</label>
-                    <textarea class="form-control" id="Cment" rows="3"></textarea>
+                    <textarea class="form-control" rows="3" id="txtMessage"></textarea>
                 </div>
                 <div class=" form-group col-sm-12 col-md-12 col-lg-12">                    
-                    <input type="submit" value="Enviar" class="btn btn-danger btn-block">
+                    <button  type="button" onclick="validarDatos();" class="btn btn-danger btn-block">
+                        Enviar
+                    </button>
                 </div>
             </div>
                 </form>
@@ -126,7 +128,7 @@
                                     <p>Marlon Joaquín Mazariego Orellana #313014</p>
                                 </li>                                
                                 <li>
-                                    <p>Marlon Joaquín Mazariego Orellana #313014</p>
+                                    <p>Walter Alexis #313014</p>
                                 </li>                                
                                 <li>
                                     <p>Oscar Napoleon Saenz Quintanilla #313014</p>
@@ -166,7 +168,7 @@
             <hr>
 
             <div class="footer-copyright text-center py-3">
-                <strong class="text-danger">© 2020 Copyright:</strong>
+                <strong class="text-danger">© 2020 Copyright</strong>
 
             </div>
 
@@ -177,6 +179,29 @@
         <script src="../js/lightbox.min.js"></script>                
         <script src="../js/lightbox-plus-jquery.min.js"></script>   
         <script src="../js/main.js"></script>  
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+        <script type="text/javascript">
+     
+            function validarDatos(){
+
+var txtNmbre = $("#txtName").val();
+var txtCorreo = $("#txtEmail").val();
+var txtMessage = $("#txtMessage").val();
+//var txtMessage = document.getElementById('txtMessage').value;
+console.log("nombre="+txtNmbre+", correo="+txtCorreo+", msg="+txtMessage);
+if(txtNmbre && txtCorreo && txtMessage){
+ swal("Notificación", "Datos enviados correctamente", "success").then((value) => {
+     document.getElementById("frmContacto").submit(); 
+   });
+}else{
+ swal("Notificación", "Complete los datos requeridos", "error");
+ return false;
+}
+
+
+};
+
+        </script>  
     </body>
 </html>
